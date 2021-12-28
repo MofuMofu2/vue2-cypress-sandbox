@@ -1,12 +1,14 @@
 <template>
-  <div id="app" />
+  <div class="side-navigation">
+
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "App",
-  components: {},
+  name: "Navigation",
 });
 </script>
+
