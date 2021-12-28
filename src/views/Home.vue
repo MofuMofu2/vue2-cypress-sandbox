@@ -1,9 +1,22 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <b-navbar toggleable="sm" type="light" variant="light">
+      <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+      <b-navbar-brand>Home Header</b-navbar-brand>
+      <b-collapse id="nav-text-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-text>Navbar text</b-nav-text>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+  </div>
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "Home",
-};
+  components: {},
+});
 </script>
