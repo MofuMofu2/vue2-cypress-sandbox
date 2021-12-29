@@ -10,6 +10,9 @@
       </b-collapse>
     </b-navbar>
     <p>Sample Text</p>
+    <b-form-group>
+      <b-form-input type="search" v-model="search"></b-form-input>
+    </b-form-group>
     <b-table striped hover :items="items"></b-table>
   </div>
 </template>
@@ -28,6 +31,7 @@ export default Vue.extend({
         { age: 89, first_name: "Geneva", last_name: "Wilson" },
         { age: 38, first_name: "Jami", last_name: "Carney" },
       ],
+      search: "",
     };
   },
 });
