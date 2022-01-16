@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <router-link :to="{ name: 'About', params: { profile: profile } }">
-      About Page
-    </router-link>
+    りまりま団について紹介するページです。
   </div>
 </template>
 
@@ -11,14 +9,5 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "Home",
-  data() {
-    return {
-      profile: {
-        name: "mofumofu",
-        github: "MofuMofu2",
-        twitter: "froakie0021",
-      },
-    };
-  },
 });
 </script>

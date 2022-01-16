@@ -15,7 +15,6 @@ const routes: Array<RouteConfig> = [
     name: "About",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    props: (route) => ({ user: route.params.profile }),
   },
   {
     path: "/books",
