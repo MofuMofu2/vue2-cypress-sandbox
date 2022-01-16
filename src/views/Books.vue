@@ -1,5 +1,16 @@
 <template>
-  <div class="books">published book</div>
+  <div class="books">
+    <ul v-if="booklist">
+      <li v-for="(value, index) in booklist" :key="index">
+        タイトル： {{ value.name }}
+        <ul>
+          <li>
+            <a :href="value.url">{{value.url}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
