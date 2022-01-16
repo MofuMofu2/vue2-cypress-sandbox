@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    りまりま団について紹介するページです。
-  </div>
+  <div class="home">りまりま団について紹介するページです。</div>
 </template>
 
 <script lang="ts">
