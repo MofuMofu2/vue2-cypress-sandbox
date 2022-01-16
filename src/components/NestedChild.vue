@@ -20,10 +20,10 @@ export default Vue.extend({
     user: { type: Object as () => Profile },
   },
   computed: {
-    githubUrl() {
+    githubUrl(): string {
       return "https://github.com/" + this.user.github;
     },
-    twitterUrl() {
+    twitterUrl(): string {
       return "https://twitter.com/" + this.user.twitter;
     },
   },
