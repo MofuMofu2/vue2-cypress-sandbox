@@ -1,10 +1,14 @@
 <template>
   <div id="child-component">
-    <p>名前: {{ user.name }}</p>
-    <p>
-      GitHub: <a :href="githubUrl">{{ user.github }}</a>
-    </p>
-    <p>Twitter: {{ user.twitter }}</p>
+    <ul>
+      <li>名前: {{ user.name }}</li>
+      <li>
+        GitHub: <a :href="githubUrl">{{ user.github }}</a>
+      </li>
+      <li>
+        Twitter: <b-link :href="twitterUrl">{{ user.twitter }}</b-link>
+      </li>
+    </ul>
   </div>
 </template>
 <script lang="ts">
