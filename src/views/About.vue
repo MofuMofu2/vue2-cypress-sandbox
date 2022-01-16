@@ -1,17 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page.</h1>
-    <p>Name: {{ user.name }}</p>
-    <p>GitHub: {{ user.github }}</p>
-    <p>Twitter: {{ user.twitter }}</p>
+    <nested-sample />
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import NestedSample from "@/components/NestedSample.vue";
 export default Vue.extend({
   name: "About",
-  props: {
-    user: Object,
-  },
+  components: { NestedSample },
 });
 </script>
