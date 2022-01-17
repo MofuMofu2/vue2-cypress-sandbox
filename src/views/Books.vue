@@ -5,7 +5,7 @@
         タイトル： {{ value.name }}
         <ul>
           <li>
-            <a :href="value.url">{{value.url}}</a>
+            <a :href="value.url">{{ value.url }}</a>
           </li>
         </ul>
       </li>
