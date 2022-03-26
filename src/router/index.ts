@@ -17,10 +17,10 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "active" */ "../views/ActiveTasks.vue"),
   },
   {
-    path: "/books",
-    name: "Books",
+    path: "/completed",
+    name: "CompletedTasks",
     component: () =>
-      import(/* webpackChunkName: "books" */ "../views/Books.vue"),
+      import(/* webpackChunkName: "books" */ "../views/CompletedTasks.vue"),
   },
 ];
 
