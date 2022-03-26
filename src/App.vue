@@ -1,18 +1,6 @@
 <template>
-  <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand href="/">りまりま団のアジト</b-navbar-brand>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="about">About</b-nav-item>
-          <b-nav-item href="completed">Books</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-    <div class="mx-4 my-3">
-      <router-view></router-view>
-    </div>
+  <div id="todo-list">
+    <h1>Tasks</h1>
   </div>
 </template>
 
