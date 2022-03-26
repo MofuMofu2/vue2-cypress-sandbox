@@ -11,10 +11,10 @@ const routes: Array<RouteConfig> = [
     component: AllTasks,
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/active",
+    name: "ActiveTasks",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "active" */ "../views/ActiveTasks.vue"),
   },
   {
     path: "/books",
