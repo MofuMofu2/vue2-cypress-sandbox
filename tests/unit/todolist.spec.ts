@@ -16,7 +16,7 @@ describe("初期状態", () => {
     const central = wrapper.findAll("td").at(1);
     const content = central.find("input[type='text']");
     expect(content.exists()).toBe(true);
-    expect(central.attributes().value).toBe("");
+    expect(wrapper.vm.$data.task).toBe("");
   });
   it("右端は削除ボタン", () => {
     const right = wrapper.findAll("td").at(2);
