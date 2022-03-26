@@ -20,6 +20,6 @@ describe("初期状態", () => {
   });
   it("右端は削除ボタン", () => {
     const right = wrapper.findAll("td").at(2);
-    expect(right.find("div")).toBe(true);
+    expect(right.find("div").exists()).toBe(true);
   });
 });

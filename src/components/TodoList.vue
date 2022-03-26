@@ -6,7 +6,7 @@
           <input type="checkbox" name="check" id="check" v-model="completed" />
         </td>
         <td><input type="text" name="form" id="form" v-model="task" /></td>
-        <td>delete</td>
+        <td><div>delete</div></td>
       </tr>
     </table>
   </div>
