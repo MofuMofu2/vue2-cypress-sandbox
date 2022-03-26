@@ -2,7 +2,9 @@
   <div id="todo-list">
     <table>
       <tr>
-        <td>check</td>
+        <td>
+          <input type="checkbox" name="check" id="check" v-model="completed" />
+        </td>
         <td>form</td>
         <td>delete</td>
       </tr>
@@ -13,5 +15,8 @@
 import Vue from "vue";
 export default Vue.extend({
   name: "TodoList",
+  data: function () {
+    return { completed: false };
+  },
 });
 </script>

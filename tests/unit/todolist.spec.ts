@@ -10,7 +10,7 @@ describe("初期状態", () => {
     const left = wrapper.findAll("td").at(0);
     const content = left.find("input[type='checkbox']");
     expect(content.exists()).toBe(true);
-    expect(content.attributes().checked).toBe(false);
+    expect(wrapper.vm.$data.completed).toBe(false);
   });
   it("中央は空のフォーム", () => {
     const central = wrapper.findAll("td").at(1);
