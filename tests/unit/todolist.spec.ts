@@ -8,16 +8,18 @@ describe("初期状態", () => {
   });
   it("左端はチェックボックス表示 チェック：OFF", () => {
     const left = wrapper.findAll("td").at(0);
-    expect(left.attributes().type).toBe("checkbox");
-    expect(left.attributes().checked).toBe(false);
+    const content = left.find("input[type='checkbox']");
+    expect(content.exists()).toBe(true);
+    expect(content.attributes().checked).toBe(false);
   });
   it("中央は空のフォーム", () => {
     const central = wrapper.findAll("td").at(1);
-    expect(central.attributes().type).toBe("text");
+    const content = central.find("input[type='text']");
+    expect(content.exists()).toBe(true);
     expect(central.attributes().value).toBe("");
   });
   it("右端は削除ボタン", () => {
     const right = wrapper.findAll("td").at(2);
-    expect(right.attributes().id).toBe("delete-icon");
+    expect(right.find("div")).toBe(true);
   });
 });

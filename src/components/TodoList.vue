@@ -1,5 +1,13 @@
 <template>
-  <div id="todo-list">todo</div>
+  <div id="todo-list">
+    <table>
+      <tr>
+        <td>check</td>
+        <td>form</td>
+        <td>delete</td>
+      </tr>
+    </table>
+  </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
