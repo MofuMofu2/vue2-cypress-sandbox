@@ -10,7 +10,15 @@
             v-model="task.completed"
           />
         </td>
-        <td><input type="text" name="form" id="form" v-model="task.task" /></td>
+        <td>
+          <input
+            type="text"
+            name="form"
+            id="form"
+            v-model="task.task"
+            @keyup.enter="doneEdit"
+          />
+        </td>
         <td><div>delete</div></td>
       </tr>
     </table>
@@ -25,6 +33,11 @@ export default Vue.extend({
     return {
       tasks: [{ completed: false, task: "" }] as Tasks,
     };
+  },
+  methods: {
+    doneEdit() {
+      this.tasks.push({ completed: false, task: "" });
+    },
   },
 });
 </script>
