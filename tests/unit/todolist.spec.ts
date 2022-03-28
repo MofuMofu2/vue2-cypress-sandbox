@@ -41,3 +41,23 @@ describe("新しいタスクを追加する", () => {
     expect(wrapper.vm.$data.tasks[1].task).toBe("");
   });
 });
+
+describe("タスクを削除する", () => {
+  const wrapper = shallowMount(TodoList);
+  const deleteTarget = wrapper.findAll("tr").at(0);
+  const form = deleteTarget.findAll("td").at(1).find("input[type='text']");
+
+  it("削除要素をクリックすると一行消える", async () => {
+    // テストのためdataを2行にする
+    await form.setValue("doing task");
+    await form.trigger("keyup.enter");
+
+    // 行削除
+    const deleteButton = deleteTarget.findAll("td").at(2).find("div");
+    await deleteButton.trigger("click");
+
+    // 削除後の検証
+    expect(wrapper.vm.$data.tasks.length).toBe(1);
+    expect(wrapper.vm.$data.tasks[0].task).toBe("");
+  });
+});
