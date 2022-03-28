@@ -19,7 +19,7 @@
             @keyup.enter="doneEdit"
           />
         </td>
-        <td><div>delete</div></td>
+        <td><div @click="deleteTask(task.index)">delete</div></td>
       </tr>
     </table>
   </div>
@@ -37,6 +37,9 @@ export default Vue.extend({
   methods: {
     doneEdit() {
       this.tasks.push({ completed: false, task: "" });
+    },
+    deleteTask(index: number) {
+      this.tasks.splice(index, 1);
     },
   },
 });
