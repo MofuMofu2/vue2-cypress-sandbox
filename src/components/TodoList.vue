@@ -1,26 +1,40 @@
 <template>
   <div id="todo-list">
     <table>
-      <tr v-for="task in tasks" :key="task.index">
-        <td>
-          <input
-            type="checkbox"
-            name="check"
-            id="check"
-            v-model="task.completed"
-          />
-        </td>
-        <td>
-          <input
-            type="text"
-            name="form"
-            id="form"
-            v-model="task.task"
-            @keyup.enter="doneEdit"
-          />
-        </td>
-        <td><div @click="deleteTask(task.index)">delete</div></td>
-      </tr>
+      <thead>
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              name="toggle-all"
+              id="toggle-all"
+              @click="toggleAll"
+            />
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="task in tasks" :key="task.index">
+          <td>
+            <input
+              type="checkbox"
+              name="check"
+              id="check"
+              v-model="task.completed"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="form"
+              id="form"
+              v-model="task.task"
+              @keyup.enter="doneEdit"
+            />
+          </td>
+          <td><div @click="deleteTask(task.index)">delete</div></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -40,6 +54,11 @@ export default Vue.extend({
     },
     deleteTask(index: number) {
       this.tasks.splice(index, 1);
+    },
+    toggleAll() {
+      for (const param of this.tasks) {
+        param.completed = !param.completed;
+      }
     },
   },
 });
