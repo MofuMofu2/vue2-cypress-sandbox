@@ -10,7 +10,7 @@
         </ul>
       </li>
     </ul>
-    <todo-list />
+    <todo-list :type="'completed'" />
   </div>
 </template>
 

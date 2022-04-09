@@ -43,6 +43,9 @@ import Vue from "vue";
 import { Tasks } from "@/interfaces/todolist";
 export default Vue.extend({
   name: "TodoList",
+  props: {
+    type: String,
+  },
   data: function () {
     return {
       tasks: [{ completed: false, task: "" }] as Tasks,

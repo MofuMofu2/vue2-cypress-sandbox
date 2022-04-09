@@ -1,7 +1,7 @@
 <template>
   <div id="all-tasks">
     <p>りまりま団について紹介するページです。</p>
-    <todo-list />
+    <todo-list :type="'all'" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import Vue from "vue";
 import TodoList from "@/components/TodoList.vue";
 
 export default Vue.extend({
-  components: { TodoList },
   name: "AllTasks",
+  components: { TodoList },
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <nested-sample />
-    <todo-list />
+    <todo-list :type="'active'" />
   </div>
 </template>
 <script lang="ts">

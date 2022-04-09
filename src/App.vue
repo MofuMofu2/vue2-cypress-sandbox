@@ -1,16 +1,14 @@
 <template>
   <div id="todos">
     <h1>Tasks</h1>
-    <todo-list />
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import TodoList from "@/components/TodoList.vue";
 
 export default Vue.extend({
-  components: { TodoList },
   name: "App",
 });
 </script>
