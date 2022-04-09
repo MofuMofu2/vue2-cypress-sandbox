@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="task in tasks" :key="task.index">
+        <tr v-for="task in filterdTasks" :key="task.index">
           <td>
             <input
               type="checkbox"
@@ -50,6 +50,18 @@ export default Vue.extend({
     return {
       tasks: [{ completed: false, task: "" }] as Tasks,
     };
+  },
+  computed: {
+    filterdTasks() {
+      switch (this.type) {
+        case "active":
+          return this.tasks.filter((task) => task.completed === false);
+        case "completed":
+          return this.tasks.filter((task) => task.completed === true);
+        default:
+          return this.tasks;
+      }
+    },
   },
   methods: {
     doneEdit() {
