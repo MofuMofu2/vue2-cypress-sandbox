@@ -1,6 +1,6 @@
-export type Tasks = Task[];
+export type Tasks = { tasks: Task[] };
 
-type Task = {
+export type Task = {
   completed: boolean;
   task: string;
 };

@@ -40,19 +40,20 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { Tasks } from "@/interfaces/todolist";
+import { Tasks, Task } from "@/interfaces/todolist";
+
 export default Vue.extend({
   name: "TodoList",
   props: {
     type: String,
   },
-  data: function () {
+  data(): Tasks {
     return {
-      tasks: [{ completed: false, task: "" }] as Tasks,
+      tasks: [{ completed: false, task: "" }],
     };
   },
   computed: {
-    filterdTasks() {
+    filterdTasks(): Task[] {
       switch (this.type) {
         case "active":
           return this.tasks.filter((task) => task.completed === false);
