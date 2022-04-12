@@ -2,7 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import TodoList from "@/components/TodoList.vue";
 
 describe("初期状態", () => {
-  const wrapper = shallowMount(TodoList);
+  const wrapper = shallowMount(TodoList, { propsData: { type: "all" } });
   const body = wrapper.find("tbody");
 
   it("一括切り替え用ボタン：チェックOFF", () => {
@@ -30,7 +30,7 @@ describe("初期状態", () => {
 });
 
 describe("新しいタスクを追加する", () => {
-  const wrapper = shallowMount(TodoList);
+  const wrapper = shallowMount(TodoList, { propsData: { type: "all" } });
   const firstRow = wrapper.find("tbody").findAll("tr").at(0);
   const form = firstRow.findAll("td").at(1).find("input[type='text']");
   beforeEach(async () => {
@@ -48,7 +48,7 @@ describe("新しいタスクを追加する", () => {
 });
 
 describe("タスクを削除する", () => {
-  const wrapper = shallowMount(TodoList);
+  const wrapper = shallowMount(TodoList, { propsData: { type: "all" } });
   const deleteTarget = wrapper.find("tbody").findAll("tr").at(0);
   const form = deleteTarget.findAll("td").at(1).find("input[type='text']");
 
@@ -68,7 +68,7 @@ describe("タスクを削除する", () => {
 });
 
 describe("一括ON/OFF切り替えチェックボックス", () => {
-  const wrapper = shallowMount(TodoList);
+  const wrapper = shallowMount(TodoList, { propsData: { type: "all" } });
   const toggleAll = wrapper.find("thead").find("input[type='checkbox']");
   const body = wrapper.find("tbody").findAll("td");
 

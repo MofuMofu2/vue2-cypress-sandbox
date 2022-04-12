@@ -1,10 +1,15 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import AllTasks from "../views/AllTasks.vue";
-
+import ActiveTasksVue from "../views/ActiveTasks.vue";
+import CompletedTasks from "../views/CompletedTasks.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+  {
+    path: "/",
+    component: AllTasks,
+  },
   {
     path: "/all",
     name: "AllTasks",
@@ -13,14 +18,12 @@ const routes: Array<RouteConfig> = [
   {
     path: "/active",
     name: "ActiveTasks",
-    component: () =>
-      import(/* webpackChunkName: "active" */ "../views/ActiveTasks.vue"),
+    component: ActiveTasksVue,
   },
   {
     path: "/completed",
     name: "CompletedTasks",
-    component: () =>
-      import(/* webpackChunkName: "books" */ "../views/CompletedTasks.vue"),
+    component: CompletedTasks,
   },
 ];
 

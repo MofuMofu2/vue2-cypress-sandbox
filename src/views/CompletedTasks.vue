@@ -10,6 +10,7 @@
         </ul>
       </li>
     </ul>
+    <todo-list :type="'completed'" />
   </div>
 </template>
 
@@ -17,12 +18,14 @@
 // @ is an alias to /src
 import Vue from "vue";
 import { BookList } from "@/interfaces/book";
+import TodoList from "@/components/TodoList.vue";
 
 type DataType = {
   booklist: null | BookList;
 };
 
 export default Vue.extend({
+  components: { TodoList },
   name: "Books",
   data(): DataType {
     return {
